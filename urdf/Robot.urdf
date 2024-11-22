@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="Robot">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="7.5516E-09 0.086873 -6.7966E-05" rpy="0 0 0" />
+      <mass value="17.633" />
+      <inertia ixx="0.38574" ixy="-9.0108E-09" ixz="1.6151E-09" iyy="0.39872" iyz="-0.00073205" izz="0.11528" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://move_cpp/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://move_cpp/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_driving_Link">
+    <inertial>
+      <origin xyz="-4.63062747868559E-16 -2.40692882291782E-17 0.0309889918837253" rpy="0 0 0" />
+      <mass value="1.01669745748013" />
+      <inertia ixx="0.00188629675580071" ixy="0" ixz="-2.12338705966477E-17" iyy="0.00188629675580071" iyz="5.43860655034718E-20" izz="0.00341254418101847" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://move_cpp/meshes/left_driving_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://move_cpp/meshes/left_driving_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_driving_joint" type="continuous">
+    <origin xyz="0.181 0.00078683 0.00072229" rpy="1.5708 -0.0050366 1.5708" />
+    <parent link="base_link" />
+    <child link="left_driving_Link" />
+    <axis xyz="0 0 -1" />
+  </joint>
+  <link name="right_driving_Link">
+    <inertial>
+      <origin xyz="-3.01841884819964E-16 1.23219576902978E-15 0.0309889918837247" rpy="0 0 0" />
+      <mass value="1.01669745748013" />
+      <inertia ixx="0.00188629675580071" ixy="-5.42101086242752E-20" ixz="-2.15223840234165E-17" iyy="0.00188629675580071" iyz="-1.93642331809034E-19" izz="0.00341254418101847" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://move_cpp/meshes/right_driving_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://move_cpp/meshes/right_driving_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_driving_joint" type="continuous">
+    <origin xyz="-0.181 0.00078683 0.00072229" rpy="-1.5708 -1.4241 1.5708" />
+    <parent link="base_link" />
+    <child link="right_driving_Link" />
+    <axis xyz="0 0 -1" />
+  </joint>
+  <link name="left_front_Link">
+    <inertial>
+      <origin xyz="1.43779432804081E-12 0.0168544398985724 0.0240047071523703" rpy="0 0 0" />
+      <mass value="0.00854174955709271" />
+      <inertia ixx="5.38481577543374E-06" ixy="-4.82200125550984E-16" ixz="-3.13689126203696E-16" iyy="5.74785615120537E-06" iyz="-8.16029471723187E-07" izz="5.61072560754906E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://move_cpp/meshes/left_front_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://move_cpp/meshes/left_front_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_front_joint" type="continuous">
+    <origin xyz="0.15729 -0.14277 -0.004" rpy="-1.5708 0 0.0049713" />
+    <parent link="base_link" />
+    <child link="left_front_Link" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="passive_wheel_0_Link">
+    <inertial>
+      <origin xyz="0 0 5.05032127229299E-11" rpy="0 0 0" />
+      <mass value="0.195523886399782" />
+      <inertia ixx="0.000101585097845165" ixy="1.01643953670516E-20" ixz="4.61897654049611E-20" iyy="0.000101585097845165" iyz="-9.55559043621258E-21" izz="0.000152207619860465" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://move_cpp/meshes/passive_wheel_0_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 0.501960784313725 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://move_cpp/meshes/passive_wheel_0_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="passive_wheel_0_joint" type="continuous">
+    <origin xyz="0 0.042 0.035" rpy="-1.5708 -0.3508 1.5708" />
+    <parent link="left_front_Link" />
+    <child link="passive_wheel_0_Link" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="right_front_Link">
+    <inertial>
+      <origin xyz="-1.08363040762782E-11 0.0168544398944123 0.0240047071715747" rpy="0 0 0" />
+      <mass value="0.00854174955074793" />
+      <inertia ixx="5.38481577652588E-06" ixy="3.61361802777327E-15" ixz="2.34062557196604E-15" iyy="5.74785614645718E-06" iyz="-8.16029474857217E-07" izz="5.61072560438381E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://move_cpp/meshes/right_front_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://move_cpp/meshes/right_front_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_front_joint" type="continuous">
+    <origin xyz="-0.15729 -0.14277 -0.004" rpy="-1.5708 0 -0.039249" />
+    <parent link="base_link" />
+    <child link="right_front_Link" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="passive_wheel_1_Link">
+    <inertial>
+      <origin xyz="0 0 5.05031572117787E-11" rpy="0 0 0" />
+      <mass value="0.195523886399782" />
+      <inertia ixx="0.000101585097845165" ixy="-1.01643953670516E-20" ixz="-6.35274710440725E-21" iyy="0.000101585097845165" iyz="-3.70576914423756E-20" izz="0.000152207619860462" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://move_cpp/meshes/passive_wheel_1_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 0.501960784313725 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://move_cpp/meshes/passive_wheel_1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="passive_wheel_1_joint" type="continuous">
+    <origin xyz="0 0.042 0.035" rpy="-1.5708 -0.33634 1.5708" />
+    <parent link="right_front_Link" />
+    <child link="passive_wheel_1_Link" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="rear_Link">
+    <inertial>
+      <origin xyz="-2.68786924141617E-12 0.0168544398980482 0.0240047071547982" rpy="0 0 0" />
+      <mass value="0.00854174955629311" />
+      <inertia ixx="5.38481577556837E-06" ixy="9.00815815210841E-16" ixz="5.85717754151134E-16" iyy="5.74785615060528E-06" iyz="-8.16029472118629E-07" izz="5.61072560715145E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://move_cpp/meshes/rear_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://move_cpp/meshes/rear_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rear_joint" type="continuous">
+    <origin xyz="0 0.19455 -0.004" rpy="-1.5708 0 -0.0093472" />
+    <parent link="base_link" />
+    <child link="rear_Link" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="passive_wheel_2_Link">
+    <inertial>
+      <origin xyz="0 -2.77555756156289E-17 5.05033920499692E-11" rpy="0 0 0" />
+      <mass value="0.195523886399782" />
+      <inertia ixx="0.000101585097845164" ixy="6.7762635780344E-21" ixz="3.70576914423756E-22" iyy="0.000101585097845164" iyz="5.82335151237331E-21" izz="0.000152207619860464" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://move_cpp/meshes/passive_wheel_2_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 0.501960784313725 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://move_cpp/meshes/passive_wheel_2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="passive_wheel_2_joint" type="continuous">
+    <origin xyz="0 0.042 0.035" rpy="-1.5708 -0.3659 1.5708" />
+    <parent link="rear_Link" />
+    <child link="passive_wheel_2_Link" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="radar_Link">
+    <inertial>
+      <origin xyz="-0.000369978038384704 0.0290775933705676 -0.00216332084825774" rpy="0 0 0" />
+      <mass value="0.043628652916038" />
+      <inertia ixx="2.53119064485714E-05" ixy="-2.23179603389942E-08" ixz="-1.68596400089959E-07" iyy="3.41480569853177E-05" iyz="-9.82146322846613E-08" izz="2.47076967926257E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://move_cpp/meshes/radar_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://move_cpp/meshes/radar_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="radar_joint" type="fixed">
+    <origin xyz="-0.0013807 -0.2147 0.2159" rpy="1.5707 0 0" />
+    <parent link="base_link" />
+    <child link="radar_Link" />
+    <axis xyz="0 0 0" />
+  </joint>
+</robot>

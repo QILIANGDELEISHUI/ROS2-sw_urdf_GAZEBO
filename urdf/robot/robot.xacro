@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!-- 机器人的名字 -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot">
+
+    <!-- 主体框架 -->
+    <xacro:include filename="$(find move_cpp)/urdf/robot/frame/base.xacro"/>
+    <xacro:include filename="$(find move_cpp)/urdf/robot/frame/up.xacro"/>
+    <!-- 执行器 -->
+    <xacro:include filename="$(find move_cpp)/urdf/robot/actuator/driving_wheel.xacro"/>
+    <xacro:include filename="$(find move_cpp)/urdf/robot/actuator/passive_wheel.xacro"/>
+
+    <!-- 传感器 -->
+    <xacro:include filename="$(find move_cpp)/urdf/robot/sensor/camera.xacro"/>
+
+    <xacro:base_xacro radius="0.275" length="0.01"/>
+    <xacro:up_xacro link_xyz="0.19 0.48 0.175" joint_xyz="0.0 0.0 0.085"/>
+
+    <xacro:driving_wheel_xacro wheel_name="left_driving_wheel" joint_xyz="-0.215 0.0 -0.02"/>
+    <xacro:driving_wheel_xacro wheel_name="right_driving_wheel" joint_xyz="0.215 0.0 -0.02"/>
+
+    <xacro:passive_wheel_xacro wheel_name="front_passive_wheel" joint_xyz="0.0 0.215 -0.065"/>
+    <xacro:passive_wheel_xacro wheel_name="rear_left_passive_wheel" joint_xyz="-0.163 -0.140 -0.065"/>
+    <xacro:passive_wheel_xacro wheel_name="rear_passive_wheel" joint_xyz="0.163 -0.140 -0.065"/>
+
+    <xacro:camera_xacro joint_xyz="0.0 0.25 0.16"/>
+
+</robot>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!-- 机器人的名字 -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="radar_xacro" params="joint_xyz">
+        <!-- 机器人的身体部分 -->
+        <link name="radar_link">
+            <!-- 部件的外观描述 -->
+            <visual>
+                <!-- 沿着自己几何中心的偏移和旋转量 -->
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <!-- 几何形状 -->
+                <geometry>
+                    <box size="0.08 0.02 0.0"/>
+                </geometry>
+                <!-- 材质颜色 -->
+                <material name="white">
+                    <color rgba="1.0 1.0 1.0 1"/>
+                </material>
+            </visual>
+        </link>
+        <!-- 关节 关节类型为固定-->
+        <joint name="radar_joint" type="fixed">
+            <!-- 将子部件以固定方式连接在父部件上,固定的偏移量参考父部件的坐标 -->
+            <!-- 固定位置 -->
+            <origin xyz="${joint_xyz}" rpy="0.0 0.0 0.0"/>
+            <!-- 父部件 -->
+            <parent link="base_link"/>
+            <!-- 子部件 -->
+            <child link="radar_link"/>
+
+        </joint>
+    </xacro:macro>
+</robot>
